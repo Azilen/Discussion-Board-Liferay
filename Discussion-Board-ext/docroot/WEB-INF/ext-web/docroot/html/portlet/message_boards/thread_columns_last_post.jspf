@@ -1,0 +1,80 @@
+<%--
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+--%>
+
+<liferay-ui:search-container-column-text
+	buffer="buffer"
+	href="<%= rowURL %>"
+	name="last-post"
+	cssClass="lastpost_CT_MB"
+>
+
+	<%
+	String lastPostByUserName = HtmlUtil.escape(PortalUtil.getUserName(thread.getLastPostByUserId(), StringPool.BLANK));
+	if (thread.getLastPostDate() == null) {
+		//buffer.append(LanguageUtil.get(pageContext, "none"));
+		buffer.append("<div class=\"forabg_CT_MB\">" +
+	            "    <div class=\"inner_CT_MB\">" +
+	            "        <ul class=\"topiclist_CT_MB forums_CT_MB kd-forum-class1 kd-forum-body_CT_MB collapse_CT_MB in_CT_MB\"" +
+	            "            id=\"kd-forum1\">" +
+	            "            <li class=\"row_CT_MB\">" +
+	            "                <dl class=\"icon_CT_MB\"" +
+	            "                    style=\"background-image: url(./styles/Charon%20-%20Main/imageset/forum_read.svg); background-repeat: no-repeat; margin-bottom: 0px;\">" +
+	            "                    <dd class=\"lastpost_CT_MB\">" +"None"+
+	            "                    </dd>" +
+	            "                </dl>" +
+	            "            </li>" +
+	            "        </ul>" +
+	            "    </div>" +
+	            "</div>");
+	}
+	else {
+		
+		
+		if(lastPostByUserName==null)
+			lastPostByUserName="Anonymous";
+
+		buffer.append("<div class=\"forabg_CT_MB\">" +
+            "    <div class=\"inner_CT_MB\">" +
+            "        <ul class=\"topiclist_CT_MB forums_CT_MB kd-forum-class1 kd-forum-body_CT_MB collapse_CT_MB in_CT_MB\"" +
+            "            id=\"kd-forum1\">" +
+            "            <li class=\"row_CT_MB\">" +
+            "                <dl class=\"icon_CT_MB\"" +
+            "                    style=\"background-image: url(./styles/Charon%20-%20Main/imageset/forum_read.svg); background-repeat: no-repeat; margin-bottom: 0px;\">" +
+            "                    <dd class=\"lastpost_CT_MB\">" +
+            "<dfn>Last post</dfn> by <a" +
+            "                                href=\""+rowURL.toString()+"\"" +
+            "                                style=\"color: #AA0000;\" class=\"username-coloured_CT_MB\">"+lastPostByUserName+"</a>" +
+            "<a href=\"./viewtopic.php?style=40&amp;f=2&amp;p=3#p3\"" +
+            "                               title=\"View the latest post\"><i" +
+            "                                    class=\"fa_CT_MB fa-arrow-circle-right last-post-icon_CT_MB icon-view-last-post\"></i></a> <br>" + dateFormatDateTime.format(thread.getLastPostDate()) +
+            "</span>" +
+            "                    </dd>" +
+            "                </dl>" +
+            "            </li>" +
+            "        </ul>" +
+            "    </div>" +
+            "</div>");
+		
+		if (Validator.isNotNull(lastPostByUserName)) {
+		
+			
+		}
+	}
+	
+	
+	%>
+
+</liferay-ui:search-container-column-text>

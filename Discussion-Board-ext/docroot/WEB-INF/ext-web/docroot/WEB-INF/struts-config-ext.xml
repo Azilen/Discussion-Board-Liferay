@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<action-mappings>
+		<action path="/portlet_configuration/select_category" forward="/portlet/message_boards/select_root_category.jsp">
+		</action>
+		<action path="/portlet_configuration/root_configurationResponse" forward="/portlet/message_boards/root_category_response.jsp" />
+		
+		<action path="/portlet_configuration/view" forward="/portlet/message_boards/select_root_category.jsp">
+		</action>
+		
+	</action-mappings>
+</struts-config>
