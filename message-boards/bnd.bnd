@@ -1,0 +1,5 @@
+Bundle-SymbolicName: message.boards
+Bundle-Version: 1.1.0
+Fragment-Host: com.liferay.message.boards.web;bundle-version="1.1.0"
+-sources: true
+-includeresource:@gson-[0-9]*.jar

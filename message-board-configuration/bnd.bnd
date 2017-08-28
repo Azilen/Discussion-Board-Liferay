@@ -1,0 +1,3 @@
+Bundle-SymbolicName: message.board.configuration
+Bundle-Version: 1.0.0
+-metatype: *
